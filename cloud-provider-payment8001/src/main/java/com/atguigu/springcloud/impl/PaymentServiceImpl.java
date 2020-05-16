@@ -21,19 +21,9 @@ public class PaymentServiceImpl implements PaymentService {
         return paymentDao.getPaymentById(id);
     }
 
-    @Transactional(rollbackFor = ArithmeticException.class)
     public int createImpl(Payment payment){
-        System.out.println("当前处理类为PaymentServiceImpl");
         System.out.println("先添加一个用户,名称为" + payment.getSerial());
-        paymentDao.create(payment);
-        try{
-            int count = 10/0;
-        } catch(Exception e){
-            throw e;
-        }
-        Payment newPayment = new Payment();
-        newPayment.setSerial("新的一个");
-        return paymentDao.create(newPayment);
+        return paymentDao.create(payment);
     }
 
 
