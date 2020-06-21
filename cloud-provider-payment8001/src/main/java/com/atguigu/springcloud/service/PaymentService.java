@@ -4,7 +4,7 @@ import com.atguigu.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Param;
 
 public interface PaymentService {
-    public int create(Payment payment);
+    public int create (Payment payment) throws Exception;
 
     public Payment getPaymentById(@Param("id") Long id);
 }

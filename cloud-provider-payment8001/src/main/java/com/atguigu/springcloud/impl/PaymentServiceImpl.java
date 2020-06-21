@@ -13,19 +13,22 @@ public class PaymentServiceImpl implements PaymentService {
     @Resource
     private PaymentDao paymentDao;
 
-    @Transactional(rollbackFor = Exception.class)
-    public int create(Payment payment) {
-        return createImpl(payment);
+
+    @Override
+    public int create(Payment payment) throws Exception{
+        return this.createImpl(payment);
     }
 
+    @Override
     public Payment getPaymentById(Long id) {
         return paymentDao.getPaymentById(id);
     }
 
-    public int createImpl(Payment payment){
+    @Transactional
+    public int createImpl(Payment payment) {
         System.out.println("先添加一个用户,名称为" + payment.getSerial());
-        return paymentDao.create(payment);
+        int result =  paymentDao.create(payment);
+        int i = 10/0;
+        return result;
     }
-
-
 }
