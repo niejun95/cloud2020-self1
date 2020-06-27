@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 @EnableEurekaClient
 @SpringBootApplication
-@EnableCircuitBreaker
+@EnableCircuitBreaker//对hystrix熔断机制的支持
 public class PaymentHystrixMain8001 {
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentHystrixMain8001.class, args);
