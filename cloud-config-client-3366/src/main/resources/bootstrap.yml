@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 
 spring:
@@ -19,13 +19,11 @@ spring:
     username: guest
     password: guest
 
-
-
 #服务注册到eureka注册中心
 eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka,http://localhost:7002/eureka
 
 
 #暴露监控端口 用于解决动态刷新
